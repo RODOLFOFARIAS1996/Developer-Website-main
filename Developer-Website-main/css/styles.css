@@ -1,0 +1,295 @@
+:root {
+    --blanco: #ffffff;
+    --oscuro: #000000;
+    --primario: orange;
+    --secundario: #757aa5;
+    --gris: #757575;
+    --grisClaro: #dfe9f3;
+  }
+  
+  html {
+    font-size: 62.5%;
+    font-family: 'Krub', sans-serif;
+    box-sizing: border-box; /* Hack para el modelo de box model */
+    background-image: linear-gradient(to top, var(--blanco) 0%, var(--grisClaro) 100%); /* Degradado */
+    scroll-snap-type: y mandatory;
+  }
+
+  *, *:before, *:after{
+    box-sizing: inherit;
+  }
+
+  /* Scroll snap */
+  .titulo,
+  .servicios-heading,
+  .contacto-heading {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+  
+  body {
+    font-size: 16px;
+   /* text-align: center;*/
+  }
+
+  .sombra {
+    box-shadow: 0px 0px 15px 0px rgba(112,112, 112.5);
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(112,112, 112.5);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(112,112, 112.5);
+    background-color: var(--blanco);
+    padding: 2rem; /* Espacio interior */
+    border-radius: 1rem; /* Esquinas redondeadas */
+
+  }
+
+  h1 {
+    font-size: 3.8rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+  }
+
+  h1, h2, h3 {
+    text-align: center;
+  }
+  
+  /* .titulo {
+    text-align: center;
+    font-size: 3.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+  } */
+
+  .titulo span{
+    font-size: 2rem;
+  }
+  
+  .contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+
+  .w-sm-100 {
+    width: 100%;
+  }
+  
+  
+  .flex {
+    display: flex;
+  }
+  
+  .alinear-derecha {
+    justify-content: flex-end;
+  }
+
+  .nav-bg{
+      background-color: var(--secundario);
+  }
+
+  .navegacion-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+    align-items: center;
+  }
+  
+  .navegacion-principal a {
+    padding: 1rem;
+    color: var(--blanco);
+    display: block;
+    text-decoration: none; 
+  }  
+
+  .navegacion-principal a:hover{
+    background-color: var(--primario);
+    color: var(--oscuro);
+  }
+
+/* Hero */
+.hero{
+  background-image: url(../img/hero.png); /* ../ es para regresar un nivel de directorio, la carpeta img está fuera de css */
+  background-repeat: no-repeat; /* Para evitar que se repita la imagen si se hace zoom out */
+  background-size: cover; /* Sirve para cubrir la imagen con todo el tamaño de la pantalla */
+  height: 450px; /* Alto del elemento */
+  position: relative; /* El padre debe ser relative */
+  margin-bottom: 2rem; /* Margen inferior para separar */
+}
+
+.contenedor-hero{
+  position: absolute; /* El hijo debe ser absolute */
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+  height: 100%;
+  /* Alinear vertical y horizontalmente */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor-hero h2, .contenedor-hero p{
+  color: var(--blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+.boton {
+  background-color: var(--secundario); /* Color de fondo */
+  text-decoration: none; /* Quitar subrayado */
+  padding: 1rem 3rem; /* Espacio interior */
+  border-radius: .5rem; /* Esquinas redondeadas */
+  color: var(--blanco); /* Color de la letra */
+  margin-top: 3rem; /* Espacio exterior */
+  font-weight: bold; /* Texto en negritas */
+  font-size: 2rem; /* Tamaño del texto */
+  text-transform: uppercase; /* Poner texto en masyúsculas */
+  text-align: center; /* Alinear todo al centro */
+  width: 90%; /* Ancho del botón que abarque el 90% si la pantalla es pequeña */
+  border: none;
+}
+
+.boton:hover {
+  cursor: pointer;
+}
+
+/* SERVICIOS */
+.servicios {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  /* grid-template-columns: 33.3% 33.3% 33.3%; */
+  grid-template-columns: repeat(3, 1fr );
+  column-gap: 1rem; /* distancia entre columnas */
+}
+
+.formulario {
+  background-color: var(--gris);
+  width: min(60rem, 100%);
+  margin: auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: var(--primario)
+}
+
+.contenedor-campos {
+
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: .5rem;
+  display: block; /* Hace que cada label tome todo el espacio disponible y esté separado del input */
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.campo textarea {
+  height: 20rem;
+}
+
+
+
+/* Footer */
+.footer {
+  text-align: center; /* Para centrar el texto del footer */
+}
+
+
+
+
+
+/* Media Query */
+
+@media (min-width: 768px) { 
+
+  .navegacion-principal{
+    flex-direction: row;
+  }
+
+  .boton {
+    width: auto;
+  }
+
+  .servicios {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-columns: 33.3% 33.3% 33.3%; */
+    grid-template-columns: repeat(3, 1fr );
+    column-gap: 1rem; /* distancia entre columnas */
+  }
+
+  .servicio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .servicio h3 {
+    color: var(--secundario);
+    font-weight: normal;
+  }
+  
+  .servicio p {
+    line-height: 2; /* Interlineado */
+    text-align: center;
+  }
+  
+  .servicio .iconos {
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--primario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+  } 
+
+  .w-sm-100 {
+    width: auto;
+  }
+
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    grid-template-rows: auto auto 20rem;
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4){
+    grid-column: 1/3;
+  }
+
+}
+
+
